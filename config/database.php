@@ -93,6 +93,26 @@ return [
             // 'trust_server_certificate' => env('DB_TRUST_SERVER_CERTIFICATE', 'false'),
         ],
 
+
+        'gesta_doc_junta' => [
+            'driver' => 'mysql',
+            'host' => env('DB_HOST_PROJECT_A', 'database_junta'),
+            'database' => env('DB_DATABASE_PROJECT_A', 'gesta_doc_junta'),
+            'username' => env('DB_USERNAME_PROJECT_A', 'root'),
+            'password' => env('DB_PASSWORD_PROJECT_A', 'secret'),
+            'port' => env('DB_PORT_PROJECT_A', '3306'),
+        ],
+
+        'gesta_doc_junta_cesar' => [
+            'driver' => 'mysql',
+            'host' => env('DB_HOST_PROJECT_B', 'database_junta_cesar'),
+            'database' => env('DB_DATABASE_PROJECT_B', 'gesta_doc_junta_cesar'),
+            'username' => env('DB_USERNAME_PROJECT_B', 'root'),
+            'password' => env('DB_PASSWORD_PROJECT_B', 'secret'),
+            'port' => env('DB_PORT_PROJECT_B', '3306'),
+        ],
+
+
     ],
 
     /*
@@ -125,7 +145,7 @@ return [
 
         'options' => [
             'cluster' => env('REDIS_CLUSTER', 'redis'),
-            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_database_'),
+            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_') . '_database_'),
         ],
 
         'default' => [
