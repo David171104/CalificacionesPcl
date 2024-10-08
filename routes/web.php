@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CalificacionesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/deficiencias', function () {
+    return view('deficiencias');
+});
+
+Route::get('/calificaciones/redirect', [CalificacionesController::class, 'handleRedirect'])->name('calificaciones.redirect');
+
+Route::post('/guardar-calificacion', [CalificacionesController::class, 'handleRedirect'])->name('guardar.calificacion');
